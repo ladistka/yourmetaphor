@@ -97,28 +97,27 @@
         }
 
         .bg-circle img {
-            object-position: 30% 10%; /* первая цифра — лево/право, вторая — верх/низ */
             width: 120%;
             height: 120%;
             object-fit: cover;
+            object-position: 30% 10%;
             margin-left: -10%;
             margin-top: -5%;
         }
 
         .front-person {
-
-            top: 17px;    /* увеличь чтобы опустить */
-            left: -34px;  /* увеличь чтобы сдвинуть левее */
             position: absolute;
             width: 360px;
             height: 360px;
             z-index: 3;
             pointer-events: none;
+            top: 17px;
+            left: -34px;
         }
 
         .front-person img {
-            width: 90%;
-            height: 90%;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
         }
 
@@ -220,8 +219,21 @@
 
         @media (max-width: 480px) {
             h1 { font-size: 2.8rem; }
-            .avatar-container { width: 220px; height: 220px; }
             .btn { width: 100%; }
+            .avatar-container {
+                width: 260px;
+                height: 260px;
+            }
+            .bg-circle {
+                width: 220px;
+                height: 220px;
+            }
+            .front-person {
+                width: 280px;
+                height: 280px;
+                top: 14px;
+                left: -26px;
+            }
         }
     </style>
 </head>
