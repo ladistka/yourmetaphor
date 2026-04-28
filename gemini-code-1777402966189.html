@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Влада Виноградова | Психолог & Коуч</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orange: #F07820;
+            --cream: #FFFBF4;
+            --peach: #FDE8C8;
+            --dark: #8B5E3C;
+            --accent: #C45A0A;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--cream);
+            color: var(--dark);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .card {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+
+        /* Твой аватар */
+        .avatar-container {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--orange);
+            box-shadow: 0 15px 35px rgba(139, 94, 60, 0.15);
+            background: white;
+        }
+
+        /* Декоративное пятно за фото */
+        .avatar-container::before {
+            content: "";
+            position: absolute;
+            width: 110%;
+            height: 110%;
+            background: var(--peach);
+            top: -5%;
+            left: -5%;
+            z-index: -1;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            opacity: 0.6;
+            animation: blob 10s infinite linear;
+        }
+
+        @keyframes blob {
+            0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+            50% { border-radius: 60% 40% 30% 70% / 50% 60% 40% 60%; }
+            100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+        }
+
+        h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 3.5rem;
+            color: var(--accent);
+            margin: 0 0 10px 0;
+            line-height: 1;
+        }
+
+        .description {
+            font-size: 1.5rem;
+            font-style: italic;
+            line-height: 1.4;
+            margin-bottom: 25px;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .roles {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .contact-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            min-width: 200px;
+            box-sizing: border-box;
+        }
+
+        .btn-tg {
+            background-color: var(--orange);
+            color: white;
+            border: 2px solid var(--orange);
+        }
+
+        .btn-wa {
+            background-color: transparent;
+            border: 2px solid var(--orange);
+            color: var(--orange);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: white;
+            box-shadow: 0 15px 25px rgba(196, 90, 10, 0.25);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.85rem;
+            opacity: 0.6;
+            letter-spacing: 1px;
+            width: 100%;
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.8rem; }
+            .avatar-container { width: 220px; height: 220px; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="avatar-container">
+            <img src="vlada.jpg" alt="Влада Виноградова" class="avatar-img">
+        </div>
+        
+        <h1>Я уже здесь</h1>
+        <p class="description">
+            Пока я отрисовываю «Пространство возможностей», мы можем начать работу над вашей историей прямо сейчас.
+        </p>
+        
+        <div class="roles">
+            Коуч • Психолог • Мастер МАК • Игропрактик
+        </div>
+
+        <div class="contact-group">
+            <a href="https://t.me/ladistka" class="btn btn-tg">Написать в Telegram</a>
+            
+            <a href="https://wa.me/79991234567?text=Влада, добрый день! Хочу записаться к вам на консультацию." class="btn btn-wa">WhatsApp</a>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 ВЛАДА ВИНОГРАДОВА
+    </footer>
+
+</body>
+</html>
