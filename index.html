@@ -59,40 +59,63 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            /* Контейнер теперь не режет картинку */
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--cream);
+            color: var(--dark);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .card {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+
         .avatar-container {
-            width: 320px; /* Немного увеличим, чтобы руке было куда расти */
+            width: 320px;
             height: 320px;
             margin: 0 auto 30px;
             position: relative;
             display: flex;
             justify-content: center;
-            align-items: flex-end; /* Прижимаем фото к низу */
+            align-items: center;
         }
 
-        .avatar-img {
-            width: 120%; /* Делаем картинку чуть больше контейнера */
-            height: auto;
-            z-index: 2;
-            position: relative;
-            /* Убираем border-radius отсюда, чтобы рука не резалась */
-        }
-
-        /* А это наш декоративный круг, который будет ЗА спиной */
-        .avatar-container::after {
-            content: "";
+        .bg-circle {
             position: absolute;
             width: 280px;
             height: 280px;
-            background: white;
-            border: 2px solid var(--orange);
             border-radius: 50%;
-            bottom: 0;
+            overflow: hidden;
+            border: 2px solid var(--orange);
             z-index: 1;
+            background: white;
             box-shadow: 0 15px 35px rgba(139, 94, 60, 0.15);
         }
 
-        /* Твое анимированное пятно остается на самом заднем плане */
+        .bg-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .front-person {
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .front-person img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
         .avatar-container::before {
             content: "";
             position: absolute;
@@ -102,27 +125,6 @@
             top: -5%;
             left: -5%;
             z-index: 0;
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-            opacity: 0.6;
-            animation: blob 10s infinite linear;
-        }
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 2px solid var(--orange);
-            box-shadow: 0 15px 35px rgba(139, 94, 60, 0.15);
-            background: white;
-        }
-
-        .avatar-container::before {
-            content: "";
-            position: absolute;
-            width: 110%;
-            height: 110%;
-            background: var(--peach);
-            top: -5%;
-            left: -5%;
-            z-index: -1;
             border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
             opacity: 0.6;
             animation: blob 10s infinite linear;
@@ -221,7 +223,12 @@
 
     <div class="card">
         <div class="avatar-container">
-            <img src="vlada.png" alt="Влада Виноградова" class="avatar-img">
+            <div class="bg-circle">
+                <img src="background.png" alt="Пространство возможностей">
+            </div>
+            <div class="front-person">
+                <img src="vlada.png" alt="Влада Виноградова">
+            </div>
         </div>
 
         <h1>Я уже здесь</h1>
